@@ -1,0 +1,17 @@
+name: Minify
+on: push
+jobs:
+  minify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: npm install
+      - run: npm run minify
+      - name: Commit
+        run: |
+          git config --global user.name 'John Doe'
+          git config --global user.email 'test@example.com'
+          git commit -am "Minify"
+          git push

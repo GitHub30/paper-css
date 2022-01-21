@@ -35,3 +35,13 @@ body.legal.landscape  .sheet { width: 357mm; height: 215mm }
     margin: 5mm auto;
   }
 }
+
+@media print {
+  .no-print { display: none !important; }
+  body.landscape        .sheet { transform-origin: 0 0 }
+  body.A3.landscape     .sheet { transform: rotate(270deg) translate(-420mm, 0) }
+  body.A4.landscape     .sheet { transform: rotate(270deg) translate(-297mm, 0) }
+  body.A5.landscape     .sheet { transform: rotate(270deg) translate(-210mm, 0) }
+  body.letter.landscape .sheet { transform: rotate(270deg) translate(-280mm, 0) }
+  body.legal.landscape  .sheet { transform: rotate(270deg) translate(-357mm, 0) }
+}
